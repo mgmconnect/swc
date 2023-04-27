@@ -285,13 +285,33 @@ h3{
         </div>
       </div>
     </section>
-  <script language="javascript">
-var noPrint=true;
-var noCopy=true;
-var noScreenshot=true;
-var autoBlur=true;
-</script>
+  <script> 
+document.addEventListener("keyup", function (e) {
+    var keyCode = e.keyCode ? e.keyCode : e.which;
+            if (keyCode == 44) {
+                stopPrntScr();
+            }
+        });
+function stopPrntScr() {
 
-<script type="text/javascript" src="https://pdfanticopy.com/noprint.js"></script>
+            var inpFld = document.createElement("input");
+            inpFld.setAttribute("value", ".");
+            inpFld.setAttribute("width", "0");
+            inpFld.style.height = "0px";
+            inpFld.style.width = "0px";
+            inpFld.style.border = "0px";
+            document.body.appendChild(inpFld);
+            inpFld.select();
+            document.execCommand("copy");
+            inpFld.remove(inpFld);
+        }
+       function AccessClipboardData() {
+            try {
+                window.clipboardData.setData('text', "Access   Restricted");
+            } catch (err) {
+            }
+        }
+        setInterval("AccessClipboardData()", 
+</script>
   </body>
 </html>
