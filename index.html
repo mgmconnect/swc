@@ -94,7 +94,7 @@ h3{
     margin-left:0;
   }
 }
-img:hover{
+img:active{
 filter: none;
 }
 img{
@@ -296,17 +296,17 @@ img{
       var noCopy=true;
       var noScreenshot=true;
       let bdy =document.querySelectorAll('img')
-      let  hover=(e)=>
+      let  active=(e)=>
       {
-        e.target.classList.add('hover')
+        e.target.classList.add('active')
       }
       let  end=(e)=>
       {
-        e.target.classList.remove('hover')
+        e.target.classList.remove('active')
       }
       bdy.forEach(img=>
       {
-        img.addEventListener('touchmove',hover)
+        img.addEventListener('touchmove',active)
         img.addEventListener('touchend',end)
       })
       </script>
