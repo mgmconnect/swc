@@ -19,7 +19,6 @@
 }
 body {
   background: #f5f5f5;
-  filter:blur(10px);
 }
 .row {
   display: flex;
@@ -95,8 +94,11 @@ h3{
     margin-left:0;
   }
 }
-body:hover,body:active{
-  filter: none;
+img:hover{
+filter: none;
+}
+img{
+  filter: blur(2px);
 }
 @media screen and (min-width: 768px) {
   section {
@@ -293,7 +295,21 @@ body:hover,body:active{
       var noPrint=true;
       var noCopy=true;
       var noScreenshot=true;
-      var autoBlur=true;
+      let bdy =document.querySelectorAll('img')
+      let  hover=(e)=>
+      {
+        e.target.classList.add('hover')
+      }
+      let  end=(e)=>
+      {
+        e.target.classList.remove('hover')
+      }
+      bdy.forEach(img=>
+      {
+        img.addEventListener('touchmove',hover)
+        img.addEventListener('touchend',end)
+      })
       </script>
+      <script type="text/javascript" src="https://pdfanticopy.com/noprint.js"></script>
   </body>
 </html>
