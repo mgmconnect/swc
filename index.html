@@ -19,6 +19,7 @@
 }
 body {
   background: #f5f5f5;
+  filter:blur(10px);
 }
 .row {
   display: flex;
@@ -93,6 +94,9 @@ h3{
     opacity:1;
     margin-left:0;
   }
+}
+body:hover,body:active{
+  filter: none;
 }
 @media screen and (min-width: 768px) {
   section {
@@ -291,7 +295,5 @@ h3{
       var noScreenshot=true;
       var autoBlur=true;
       </script>
-      
-      <script type="text/javascript" src="https://pdfanticopy.com/noprint.js"></script>
   </body>
 </html>
